@@ -40,7 +40,7 @@ const controlRecipes = async function () {
   }
 };
 
-const controlSearchReslts = async function () {
+const controlSearchResults = async function () {
   try {
     resultsView.renderSpinner();
 
@@ -127,14 +127,18 @@ const controlAddRecipe = async function(newRecipe) {
   }
 }
 
+const newFeature = function() {
+  console.log("Welcome to the application!");
+}
+
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
-  searchView.addHandlerSearch(controlSearchReslts);
+  searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  console.log("Welcome!");
+  newFeature();
 };
 init();
